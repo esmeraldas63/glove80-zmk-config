@@ -125,16 +125,16 @@
             bindings = <&mo>, <&kp>;
         };
 
-        lt_r: layer_tap_nav {
+        lt_r: layer_tap_nav_r {
             compatible = "zmk,behavior-hold-tap";
-            label = "lt_l";
+            label = "LT_R";
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <280>;
             quick-tap-ms = <275>;
             require-prior-idle-ms = <100>;
             hold-trigger-on-release;
-            hold-trigger-key-positions = <KEYS_R>;
+            hold-trigger-key-positions = <KEYS_L>;
             bindings = <&mo>, <&kp>;
         };
     };
