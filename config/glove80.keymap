@@ -93,15 +93,6 @@
             bindings = <&kp>, <&kp>;
         };
 
-        // → unshifted, ⇒ shifted. Requires macOS Unicode Hex Input keyboard layout.
-        arrow_uni: arrow_unicode {
-            compatible = "zmk,behavior-mod-morph";
-            label = "ARROW_UNI";
-            #binding-cells = <0>;
-            bindings = <&unicode_arrow>, <&unicode_darrow>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
         // Thumb key: tap = one-shot layer, hold = momentary layer.
         sl_mo: sticky_mo {
             compatible = "zmk,behavior-hold-tap";
@@ -146,28 +137,6 @@
             #binding-cells = <0>;
             bindings
                 = <&rgb_ug RGB_STATUS>;
-        };
-
-        // U+2192 → (macOS Unicode Hex Input: Option + 2192)
-        unicode_arrow: unicode_arrow {
-            label = "UNICODE_ARROW";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LALT>
-                , <&macro_tap &kp N2 &kp N1 &kp N9 &kp N2>
-                , <&macro_release &kp LALT>;
-        };
-
-        // U+21D2 ⇒ (macOS Unicode Hex Input: Option + 21D2)
-        unicode_darrow: unicode_darrow {
-            label = "UNICODE_DARROW";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LALT>
-                , <&macro_tap &kp N2 &kp N1 &kp D &kp N2>
-                , <&macro_release &kp LALT>;
         };
 
         bt_0: bt_profile_macro_0 {
@@ -295,7 +264,7 @@
             bindings = <
             &trans   &trans      &trans      &trans      &trans                                                                                                   &trans      &trans      &trans      &trans      &trans
             &trans   &trans      &trans      &trans      &trans      &trans                                                                           &trans      &trans      &trans      &trans      &trans      &trans
-            &trans   &kp GRAVE   &kp LT      &kp GT      &kp MINUS   &kp PIPE                                                                         &kp CARET   &kp LBRC    &kp RBRC    &kp DLLR    &trans      &trans
+            &trans   &kp GRAVE   &kp LT      &kp GT      &kp MINUS   &kp PIPE                                                                         &kp CARET   &kp LBRC    &kp RBRC    &kp DLLR    &kp UNDER   &trans
             &trans   &kp EXCL    &kp STAR    &kp FSLH    &kp EQUAL   &kp AMPS                                                                         &kp HASH    &kp LPAR    &kp RPAR    &kp SEMI    &kp DQT     &trans
             &trans   &kp TILDE   &kp PLUS    &kp LBKT    &kp RBKT    &kp PRCNT   &trans   &trans   &trans      &trans   &trans   &trans               &kp AT      &kp COLON   &kp COMMA   &kp DOT     &kp SQT     &trans
             &trans   &trans      &trans      &trans      &trans                   &trans   &trans   &trans     &trans   &trans   &trans                           &trans      &trans      &trans      &trans      &trans
